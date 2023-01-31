@@ -5,4 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'; // vite의 절대경로 맵핑 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  server: {
+    port: 8080,
+  },
 });

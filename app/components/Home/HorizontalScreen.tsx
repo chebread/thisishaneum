@@ -5,8 +5,8 @@ import styled from 'styled-components';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = ({ children }: any) => {
-  const panelRef = useRef<HTMLInputElement>([]);
-  const containerRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef([]);
+  const containerRef = useRef(null);
 
   const createPanelsRefs = () => {
     let index = -1;

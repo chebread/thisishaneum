@@ -1,21 +1,12 @@
-import { useState } from 'react';
+import Router from 'components/Router/Router';
+import FullScreen from 'layouts/Screens/FullScreen';
 
 const App = () => {
-  const [value, setValue] = useState(0);
   return (
-    <div>
-      <div>{value}</div>
-      <button
-        onClick={() => {
-          setValue(value + 1);
-        }}
-      >
-        add
-      </button>
-    </div>
+    <FullScreen>
+      <Router />
+    </FullScreen>
   );
 };
 
 export default App;
-
-// vscode만 error 발생

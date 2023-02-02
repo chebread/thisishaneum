@@ -5,12 +5,14 @@ import styled from 'styled-components';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = ({ children }: any) => {
-  const panelRef = useRef([]);
-  const containerRef = useRef(null);
+  const panelRef = useRef<any>([]);
+  const containerRef = useRef<any>(null); // (bug): <any>로 일단은 에러 잡음
 
   const createPanelsRefs = () => {
     let index = -1;
-    const f = panel => {
+    const f = (panel: any) => {
+      // (bug): 일단은 any로 때움 (39 ref 때문에)
+      // panel은 <div> 어쩌고의 값이 들어온다
       index++;
       panelRef.current[index] = panel;
     };

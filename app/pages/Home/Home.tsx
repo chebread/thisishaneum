@@ -9,7 +9,7 @@ const Home = () => {
       <AwardsBadge />
       <HorizontalScreen>
         <ContactPanel />
-        <AboutPanel />
+        {/* <AboutPanel /> */}
       </HorizontalScreen>
     </>
   );

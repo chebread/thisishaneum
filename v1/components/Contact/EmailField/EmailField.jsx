@@ -1,4 +1,4 @@
-import FullScreen from 'layouts/FullScreen';
+import { FullScreen } from 'layouts/Screens';
 import { useRecoilState } from 'recoil';
 import { emailState } from 'states/Contact/datasState';
 import EmailInput from 'components/Contact/EmailField/EmailInput';

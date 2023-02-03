@@ -1,31 +1,31 @@
-import FullScreen from 'layouts/Screens/FullScreen';
+import { useAtom } from 'jotai';
+import { informationAtom } from 'atoms/informationAtom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { disabledSelection } from 'layouts/properties';
+import { CenterScreen } from 'layouts/Screens';
 
 const ContactPanel = () => {
+  const [information, setInformation] = useAtom(informationAtom);
+
   return (
-    <CenterScreen>
+    <Screen>
       <Wrapper>
         <Text>Let's work together</Text>
       </Wrapper>
       <Wrapper>
-        <Button as="a" href="mailto:chahanm@proton.me">
-          chahanm@proton.me
+        <Button as={Link} to="c">
+          Contact me this page
         </Button>
       </Wrapper>
-    </CenterScreen>
+    </Screen>
   );
 };
 
-const CenterScreen = styled(FullScreen)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const Screen = styled(CenterScreen)`
   gap: 10px;
-  // text 선택 금지
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
+  // disabled cursur selection
+  ${disabledSelection}
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -47,14 +47,15 @@ const Button = styled.button`
   font-weight: 400;
   mix-blend-mode: difference;
   padding: 11px 21px 11px 21px;
-  // border
-  border: 1px solid #fff;
-  border-radius: 500px;
-  box-sizing: border-box;
+  // hover
   &:hover {
     background-color: #fff;
     color: #000;
   }
+  // border
+  border: 1px solid #fff;
+  border-radius: 500px;
+  box-sizing: border-box;
   // animation
   transition: all 0.2s ease-out; // delay: 0s
   // svg

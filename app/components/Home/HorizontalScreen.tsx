@@ -1,14 +1,14 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Children, useLayoutEffect, useRef } from 'react';
+import { Children, useCallback, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger); // moduel init
 
 const Home = ({ children }: any) => {
   const panelRef = useRef<any>([]);
   const containerRef = useRef<any>(null); // (bug): <any>로 일단은 에러 잡음
 
-  const createPanelsRefs = () => {
+  const createPanelsRefs = useCallback(() => {
     let index = -1;
     const f = (panel: any) => {
       // (bug): 일단은 any로 때움 (39 ref 때문에)
@@ -17,26 +17,30 @@ const Home = ({ children }: any) => {
       panelRef.current[index] = panel;
     };
     return f;
-  };
-  const create = createPanelsRefs();
+  }, []);
+  const create = createPanelsRefs(); // closure
+
   useLayoutEffect(() => {
     gsap.to(panelRef.current, {
       ease: 'none',
       xPercent: -100 * (panelRef.current.length - 1),
       scrollTrigger: {
-        end: () => '+=' + containerRef.current.offsetWidth * 2, // containerRef.current.offsetWidth,
         // 스크롤 조절하기
+        end: () => '+=' + containerRef.current.offsetWidth * 2,
         trigger: containerRef.current,
         pin: true, // (0): resize 버벅거림 해결하기
         scrub: 0.5,
         snap: 0,
       },
     });
-    ScrollTrigger.normalizeScroll(true); // 일단은 허용한다.
+    ScrollTrigger.normalizeScroll(true); // 뭔지는 모르지만 일단은 허용한다
+    return () => {
+      ScrollTrigger.killAll(); // react router dom link error resolution
+    };
   }, []);
 
   return (
-    <Container ref={containerRef}>
+    <Container ref={containerRef} id="id">
       {Children.toArray(children).map((element, index) => (
         <div ref={create} key={index}>
           {element}

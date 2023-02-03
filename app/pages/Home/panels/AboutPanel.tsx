@@ -1,4 +1,4 @@
-import FullScreen from 'layouts/Screens/FullScreen';
+import { FullScreen } from 'layouts/Screens';
 import styled from 'styled-components';
 
 const AboutPanel = () => {

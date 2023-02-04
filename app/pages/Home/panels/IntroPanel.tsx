@@ -1,5 +1,3 @@
-import { useAtom } from 'jotai';
-import { informationAtom } from 'atoms/informationAtom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { disabledSelection } from 'layouts/properties';
@@ -7,8 +5,6 @@ import { CenterScreen } from 'layouts/Screens';
 
 // (feat): 재구성; 개발
 const ContactPanel = () => {
-  const [information, setInformation] = useAtom(informationAtom);
-
   return (
     <Screen>
       <Wrapper>
@@ -37,7 +33,6 @@ const Wrapper = styled.div`
 const Text = styled.div`
   font-size: 60px;
   font-weight: 800;
-  mix-blend-mode: difference;
 `;
 const Button = styled.button`
   all: unset;
@@ -59,11 +54,5 @@ const Button = styled.button`
   box-sizing: border-box;
   // animation
   transition: all 0.2s ease-out; // delay: 0s
-  // svg
-  svg {
-    fill: #fff;
-    height: 40px;
-    width: 40px;
-  }
 `;
 export default ContactPanel;

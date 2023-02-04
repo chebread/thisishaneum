@@ -1,14 +1,13 @@
 import AwardsBadge from 'components/Home/AwardsBadge';
 import HorizontalScreen from 'components/Home/HorizontalScreen';
-import AboutPanel from 'pages/Home/panels/AboutPanel';
-import ContactPanel from 'pages/Home/panels/ContactPanel';
+import { IntroPanel, AboutPanel } from 'pages/Home/panels';
 
 const Home = () => {
   return (
     <>
-      <AwardsBadge />
+      {/* <AwardsBadge /> */}
       <HorizontalScreen>
-        <ContactPanel />
+        <IntroPanel />
         <AboutPanel />
       </HorizontalScreen>
     </>

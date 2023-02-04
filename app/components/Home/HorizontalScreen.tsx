@@ -4,6 +4,7 @@ import { Children, useCallback, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
 gsap.registerPlugin(ScrollTrigger); // moduel init
 
+// panel들에서 텍스트 선택시 한 패널만 선택되고 다른 패널에서는 선택이 불가능함
 const Home = ({ children }: any) => {
   const panelRef = useRef<any>([]);
   const containerRef = useRef<any>(null); // (bug): <any>로 일단은 에러 잡음
@@ -42,9 +43,9 @@ const Home = ({ children }: any) => {
   return (
     <Container ref={containerRef} id="id">
       {Children.toArray(children).map((element, index) => (
-        <div ref={create} key={index}>
+        <Panel ref={create} key={index}>
           {element}
-        </div>
+        </Panel>
       ))}
     </Container>
   );
@@ -58,5 +59,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
 `;
+const Panel = styled.div``;
 
 export default Home;

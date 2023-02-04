@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     color: #fff;
     font-weight: 600;
     box-sizing: border-box;
-    cursor: text;
+    cursor: text; // none
   }
   
   /* ::selection {

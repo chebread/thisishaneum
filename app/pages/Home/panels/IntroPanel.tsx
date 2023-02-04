@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { disabledSelection } from 'layouts/properties';
 import { CenterScreen } from 'layouts/Screens';
 
+// (feat): 재구성; 개발
 const ContactPanel = () => {
   const [information, setInformation] = useAtom(informationAtom);
 

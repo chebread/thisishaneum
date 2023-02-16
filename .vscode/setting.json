@@ -1,6 +1,3 @@
 {
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "search.exclude": {
-    "v1/": true
-  }
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

@@ -6,4 +6,5 @@ const AboutPanel = () => {
 };
 
 const Screen = styled(FullScreen)``;
+
 export default AboutPanel;

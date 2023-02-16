@@ -1,6 +1,6 @@
 # thisishaneum
 > This is a portfolio webpage that expresses and introduces Cha Haneum
-> This project was developed using vite + pnpm
+> This project was developed using vite + yarn berry
 
 ## Website Link
 [thisishaneum.com](https://thisishaneum.com)

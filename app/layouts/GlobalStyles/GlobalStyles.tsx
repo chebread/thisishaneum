@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  // #0077ee #ff880f #07ee00
   body {
     margin: 0;
     padding: 0;

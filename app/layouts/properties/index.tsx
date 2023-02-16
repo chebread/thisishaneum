@@ -1,3 +1,4 @@
+import centerAlignment from './centerAlignment';
 import disabledSelection from './disabledSelection';
 
-export { disabledSelection };
+export { disabledSelection, centerAlignment };

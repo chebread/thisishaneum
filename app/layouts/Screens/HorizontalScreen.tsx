@@ -4,7 +4,7 @@ import { Children, useCallback, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
 gsap.registerPlugin(ScrollTrigger); // moduel init
 
-// panel들에서 텍스트 선택시 한 패널만 선택되고 다른 패널에서는 선택이 불가능함
+// (bug): panel들에서 텍스트 선택시 한 패널만 선택되고 다른 패널에서는 선택이 불가능함
 const HorizontalScreen = ({ children }: any) => {
   const panelRef = useRef<any>([]);
   const containerRef = useRef<any>(null); // (bug): <any>로 일단은 에러 잡음
@@ -22,26 +22,26 @@ const HorizontalScreen = ({ children }: any) => {
   const create = createPanelsRefs(); // closure
 
   useLayoutEffect(() => {
-    gsap.to(panelRef.current, {
-      ease: 'none',
-      xPercent: -100 * (panelRef.current.length - 1),
-      scrollTrigger: {
-        // 스크롤 조절하기
-        end: () => '+=' + containerRef.current.offsetWidth * 2,
-        trigger: containerRef.current,
-        pin: true, // (0): resize 버벅거림 해결하기
-        scrub: 0.5,
-        snap: 0,
-      },
-    });
-    ScrollTrigger.normalizeScroll(true); // 뭔지는 모르지만 일단은 허용한다
-    return () => {
-      ScrollTrigger.killAll(); // react router dom link error resolution
-    };
+    const ctx = gsap.context(() => {
+      console.log(1);
+
+      gsap.to(panelRef.current, {
+        ease: 'none',
+        xPercent: -100 * (panelRef.current.length - 1),
+        scrollTrigger: {
+          end: () => '+=' + containerRef.current.offsetWidth * 2,
+          trigger: containerRef.current,
+          pin: true,
+          scrub: 0.5,
+        },
+      });
+      ScrollTrigger.normalizeScroll(true); // 뭔지는 모르지만 일단은 허용한다
+    }, containerRef);
+    return () => ctx.revert();
   }, []);
 
   return (
-    <Container ref={containerRef} id="id">
+    <Container ref={containerRef}>
       {Children.toArray(children).map((element, index) => (
         <Panel ref={create} key={index}>
           {element}

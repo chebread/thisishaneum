@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { disabledSelection } from 'layouts/properties';
+import { DisabledSelection } from 'layouts/properties';
 import { FullScreen } from 'layouts/Screens';
 
 const ContactPanel = () => {
@@ -9,7 +9,7 @@ const ContactPanel = () => {
 
 const Screen = styled(FullScreen)`
   // disabled cursur selection
-  ${disabledSelection}
+  ${DisabledSelection}
 `;
 const BottomLeftScreen = styled(FullScreen)`
   display: flex;

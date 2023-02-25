@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CenterScreen } from 'layouts/Screens';
-import { centerAlignment, disabledSelection } from 'layouts/properties';
+import { CenterAlignment, DisabledSelection } from 'layouts/properties';
 import { Link } from 'react-router-dom';
+import DesktopScreen from 'layouts/Screens/DesktopScreen';
 
 const NotFoundPage = () => {
   return (
@@ -14,23 +15,23 @@ const NotFoundPage = () => {
 };
 
 const Screen = styled(CenterScreen)`
-  ${disabledSelection}
+  ${DisabledSelection}
 `;
 const Wrapper = styled.div`
   all: unset;
-  height: 30%;
+  height: 25%;
   width: 25%;
   display: flex;
-  ${centerAlignment}
+  ${CenterAlignment}
   // border
-  box-sizing: border-box;
+    box-sizing: border-box;
   border-radius: 30px;
   // animation
   transition: transform 0.25s, box-shadow 0.25s, border 0.25s; // delay: 0s;
   transition-timing-function: ease-out;
   // hover
   &:hover {
-    border: 2px solid #fff; // not using animation
+    border: 1px solid #fff; // not using animation
     transform: translate(10px, -10px);
     box-shadow: -10px 10px #fff;
   }

@@ -1,1 +1,1 @@
-export { default } from 'layouts/GlobalStyles/GlobalStyles';
+export { default } from './GlobalStyles';

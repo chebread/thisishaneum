@@ -7,15 +7,6 @@ const ContactPanel = () => {
   return <Screen>hello</Screen>;
 };
 
-const Screen = styled(FullScreen)`
-  // disabled cursur selection
-  ${DisabledSelection}
-`;
-const BottomLeftScreen = styled(FullScreen)`
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: end;
-`;
+const Screen = styled(FullScreen)``;
 
 export default ContactPanel;

@@ -5,11 +5,16 @@ import svgr from 'vite-plugin-svgr';
 import mkcert from 'vite-plugin-mkcert';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), tsconfigPaths(), svgr(), mkcert()],
-  server: {
-    port: 8080,
-    https: true,
-    open: true, // 브라우저에서 열음
-  },
+export default defineConfig(async () => {
+  return {
+    optimizeDeps: {
+      include: ['react/jsx-runtime'],
+    },
+    plugins: [react(), tsconfigPaths(), svgr(), mkcert()],
+    server: {
+      port: 8080,
+      https: true,
+      open: true, // 브라우저에서 열음
+    },
+  };
 });

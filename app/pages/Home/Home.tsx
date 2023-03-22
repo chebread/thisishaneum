@@ -8,7 +8,6 @@ const Home = () => {
       {/* <AwardsBadge /> */}
       <HorizontalScreen>
         <IntroPanel />
-        <AboutPanel />
       </HorizontalScreen>
     </>
   );

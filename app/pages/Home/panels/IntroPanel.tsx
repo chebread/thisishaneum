@@ -4,7 +4,7 @@ import { DisabledSelection } from 'layouts/properties';
 import { FullScreen } from 'layouts/Screens';
 
 const ContactPanel = () => {
-  return <Screen>hello</Screen>;
+  return <Screen></Screen>;
 };
 
 const Screen = styled(FullScreen)``;

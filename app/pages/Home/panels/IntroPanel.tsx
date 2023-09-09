@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { DisabledSelection } from 'layouts/properties';
 import { FullScreen } from 'layouts/Screens';
 
 const ContactPanel = () => {
-  return <Screen></Screen>;
+  return <Screen>Hello! I am Cha Haneum</Screen>;
 };
 
 const Screen = styled(FullScreen)``;

@@ -12,4 +12,4 @@
 - styled-components
 
 ## License
-[MIT Licesen &copy; 2023 Cha Haneum](.github/LICENSE)
+[MIT Licesen &copy; 2024 Cha Haneum](.github/LICENSE)

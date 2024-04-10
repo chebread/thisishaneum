@@ -3,8 +3,6 @@
 import { styled } from 'styled-components';
 import 'github-markdown-css';
 
-// (0): description을 본문에 추가할까 말까?
-
 export default function PostBody({ children }) {
   return <Container className="markdown-body">{children}</Container>;
 }
